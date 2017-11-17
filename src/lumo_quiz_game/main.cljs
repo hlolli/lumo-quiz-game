@@ -2,6 +2,7 @@
   (:require-macros [cljs.core.async.macros :refer [go go-loop]])
   (:require [cljs.core.async :refer [put! chan <! >! timeout close!]]
             [macchiato.fs :as fs]
+            [lumo.io :as io]
             [chalk-animation :as animate]
             [close-enough :as close-enough]))
 
@@ -28,7 +29,9 @@
   (.radar animate text))
 
 (def questions-db
-  (-> (fs/slurp "resources/questions.json")
+  (-> "resources/questions.json"
+      io/resource
+      io/slurp
       js/JSON.parse
       (js->clj :keywordize-keys true)))
 
