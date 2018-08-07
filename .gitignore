@@ -2,3 +2,5 @@ node_modules
 *~
 *.lock
 .lumo_cache
+package-lock.json
+lumo*
