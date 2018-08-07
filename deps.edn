@@ -1,0 +1,3 @@
+{:deps
+ {andare/andare {:mvn/version "0.9.0"}
+  macchiato/fs  {:mvn/version "0.2.1"}}}
